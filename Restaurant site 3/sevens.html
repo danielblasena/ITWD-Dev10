@@ -1,0 +1,82 @@
+<!--
+Name: Dan Blasena
+Date Created: 12/20/2018
+Most recent revision: 12/27/2018
+-->
+<!DOCTYPE html>
+<html>
+   <head>
+   <script>
+         function go(){
+// Variables are created and given values
+var firstbet = document.getElementById("firstbet").value;
+var money = 0;
+var die1 = 0;
+var die2 = 0;
+var dice = 0;
+var rollTally = 0;
+var unLuckyCounter = 0;
+var money = firstbet;
+var moneyHeld = [firstbet];
+var win = 4;
+var loss = 1;
+var maxHeld = 0;
+	
+	
+// This loop will run game operation as long as while condition is met
+	do{
+		
+		rollTally++;
+		die1 = Math.floor(Math.random() * 6) + 1;
+		die2 = Math.floor(Math.random() * 6) + 1;	
+		dice = die1+die2;
+
+			// if the dice roll is 7
+			if (dice == 7){
+			money = money+win; 
+			var last_element = moneyHeld[moneyHeld.length -1]; 
+			var last_updated = last_element + win; 
+			moneyHeld.push(last_updated);
+
+			// if the dice roll is anything else
+			}else {
+			money--;
+			unLuckyCounter++;
+				
+			var last_element = moneyHeld[moneyHeld.length -1];
+			var last_updated = last_element - loss;
+			moneyHeld.push(last_updated);
+			rollTally = rollTally++;
+			}
+
+// The do part will continue to run as long as the while condition is met
+	}while(money>0);
+	var totalMax = 0;
+
+	totalMax = Math.max.apply(Math, moneyHeld); 
+	numRolls = moneyHeld.indexOf(totalMax); 
+	if(numRolls<1){
+		numRolls = 0;
+	}
+//Displays the end game text with the information on what the result was
+	document.getElementById("p1").innerHTML=("<center><br><br><table style=\"width: 100% height: 100%;\"><th colspan=\"2\"; class=\"th1\">Results</th><tr><th class=\"th2\">Starting Bet</th><th class=\"th2\">$" + firstbet + ".00</th></tr><tr><td>Total Rolls Before Going Broke</td><td>"+ rollTally +"</td></tr><tr><td>Highes Amount Won</td><td>"+totalMax+"</td></tr><tr><td>Roll Count at Highest Amount Held</td><td>"+ numRolls + "</td></tr></table></center>");
+	document.getElementById("p2").innerHTML="Play Again";
+
+} 
+
+      </script>
+   </head>
+   <!--simple HTML form with button to let user select initial amount and then run the game operation-->
+   <body>
+<div class="style1">
+	<h1>Lucky Sevens</h1>
+		Starting Bet: <input class="txtBox" type="text" id="firstbet" name="bet" value="$0.00"><br>
+		<button onclick="go()" id="p2" class="playButton" type="button">Play</button>
+	</form>
+</div>
+<div style="text-align:center;" id="p1"></div>
+
+
+      
+   </body>
+</html>
