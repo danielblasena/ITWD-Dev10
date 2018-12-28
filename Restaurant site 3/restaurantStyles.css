@@ -1,0 +1,59 @@
+header {
+    background-color: #DFA4A4;
+    color: black;
+    text-align: center;
+    border: thin solid #0d1f2d;
+    text-decoration: none;
+    display: block;
+
+    
+}
+footer {
+	background-color: #DFA4A4;
+    color: black;
+	text-align: center;
+    border: thin solid #0d1f2d;
+    text-decoration: none;
+    display: block;
+ position:relative;
+ padding: 10px;
+   left:0px;
+   bottom:0px;
+   
+   width:100%;
+	
+    
+
+}
+h1 {
+	
+	font-family: ariel;
+	
+}
+nav{
+	background-color: #aa3c3c;
+	color: black;
+	
+	
+}
+a:active {
+	text-decoration: none;
+	
+}
+a:hover {
+	font-weight: bold;
+	
+}
+a:visited {
+	color: #00cc00;
+	
+}
+.jumbotron {
+	background-color: #aa3c3c;
+
+}	
+.rotate {
+	font-size: 20px;
+}
+
+	

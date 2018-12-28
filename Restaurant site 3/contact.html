@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<!--
+Name: Dan Blasena
+Date Created: 12/20/2018
+Most recent revision: 12/27/2018
+-->
+<html lang="en"> 
+    <head> 
+        <title>Contact Us</title>
+
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<link href="restaurantStyles.css" rel="stylesheet" type="text/css" />
+		<!-- CSS styling for this page-->
+		<style>
+		form {
+		text-align: center;
+		
+		}
+		.required {
+		font-weight: bold;
+		
+		}
+		body {
+		background-color: #DC946B;
+		}
+
+		</style>
+		
+		<!-- Javascript function to check for data validation-->
+		<script>
+		function validateForm() {
+			var x=document.forms["contact"]["name"].value;
+			if (x==null || x==""){
+				alert("Name must be filled out");
+				return false;
+			}
+		var y=document.forms["contact"]["email"].value;
+			if (y==null || y=="") {
+				alert("Email must be filled out");
+				return false;
+			}
+		var z=document.forms["contact"]["phone"].value;
+			if (z==null || z=="") {
+				alert("Please provide a phone number");
+				return false;
+			}
+			else{
+				alert("All information is valid");
+			}
+		}
+	</script>	
+    </head> 
+    <!-- Start of body portion of page-->
+    <body>
+	<!-- Checks if browser has javascript enabled-->
+	<noscript>This website is best viewed with Javascript enabled</noscript>
+            <header> 
+               <h1>Burgers and Stuff</h1>
+				<div class="container">
+				<nav>
+					<ul class="nav nav-tabs">
+					<li>
+						<a href="index.html">
+						<span class="glyphicon glyphicon-home"></span>
+						</a>
+					</li>
+					<li><a href="menu.html">Menu</a></li>
+					<li><a href="contact.html">Contact Us</a></li>
+					</ul>
+				</div>							
+				<div class="container">
+					<h2>Special News!</h2>  
+				<div id="myCarousel" class="carousel slide" data-ride="carousel">
+				<div class="carousel-inner">
+				<div class="item active">
+					<h3 class="rotate">Grand Opening for new Location!</h3>      
+					<p class="rotate">Burgers and stuff will be opening our new resturant in Minneapolis in March 2018! </p>
+				</div>
+				<div class="item">
+					<h3 class="rotate"> New fesitve menu!</h3>
+					<p class="rotate">With traditional holiday foods!</p>
+				</div>
+				<div class="item">
+					<h3 class="rotate"> Drink of the Month</h3>
+					<p class="rotate"> SG Special Brew</p>
+				</div>
+			</div>
+			<a class="left carousel-control" href="#myCarousel" data-slide="prev">
+				<span class="glyphicon glyphicon-chevron-left"></span>
+				<span class="sr-only">Previous</span>
+			</a>
+			<a class="right carousel-control" href="#myCarousel" data-slide="next">
+				<span class="glyphicon glyphicon-chevron-right"></span>
+				<span class="sr-only">Next</span>
+			</a> 
+		</div>
+	</div>
+	</nav>
+	</header>
+		<h2 align="center">Contact Us</h2>
+<br>
+		<div class="container">
+		<!--Beginning for contact form-->
+		<form name="contact" class="form-horizontal" onsubmit="return validateForm()" method="post">
+			<div class="form-group">
+				<label class="col-sm-2" for="Name">Name:</label>
+				<div class="col-sm-10">
+					<input type="text" class="form-control" id="name" placeholder="Enter name" name="name">
+				</div>
+			</div>
+	
+	
+			<div class="form-group">
+				<label class="col-sm-2" for="">Email:</label>
+				<div class="col-sm-10">
+				<input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+				</div>
+			</div>
+	
+	
+			<div class="form-group">
+				<label class="col-sm-2" for="phone">Phone:</label>
+				<div class="col-sm-10">
+				<input type="text" class="form-control" id="phone" placeholder="Enter phone number" name="phone">
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-2" for="phone">Reason for Inquiry:</label>
+				<div class="col-sm-10" align="left">
+				<select>
+					<option value="catering" selected>Catering</option>
+					<option value="pp">Private Party</option>
+					<option value="feedback">Feedback</option>
+					<option value="other">Other</option>
+				</select>
+				</div>
+			</div>
+			
+			<div class="form-group">
+				<label class="col-sm-2" for="phone">Additional Information:</label>
+				<div class="col-sm-10" align="left">
+				<textarea>
+				</textarea>
+				</div>
+			</div>
+			
+			Best Days to contact you:
+			<div class="checkbox">
+	
+			<div class=" col-lg-3">
+				<input type="checkbox" name="M" value="Monday">Monday
+				</div>
+				<div class=" col-lg-3">
+				<input type="checkbox" name="T" value="Tuesday">Tuesday
+				</div>
+				<div class=" col-lg-2">
+				<input type="checkbox" name="W" value="Wednesday">Wednesday
+				</div>
+				<div class=" col-lg-2">
+				<input type="checkbox" name="Th" value="Thursday">Thursday
+				</div>
+				<div class=" col-lg-2">
+				<input type="checkbox" name="F" value="Friday">Friday
+				</div>				
+			</div>
+	<br>
+	<br>
+	Have you been to the resturant?
+	<div class="radio">
+			<div class="col-lg-6">
+				<input type="radio" name="visit" value="no" checked>No
+				</div>
+				<div class="col-lg-6">
+				<input type="radio" name="visit" value="yes">Yes
+				</div>
+			</div>
+				<button type="submit" class="btn btn-default">Submit</button>
+		</form>
+	</div>
+	<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+            <footer> <!-- The footer is a block at the bottom of the page. -->
+                <hr />
+                <p>&copy; 2018 Dan Blasena. All rights reserved.</p>
+				<p>1st Blvd North, St.Paul, MN, 55101</p>
+				<p>123-456-2859</p>
+            </footer>
+    </body> 
+</html>
